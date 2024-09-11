@@ -1,0 +1,237 @@
+/* Body Styling */
+body {
+    background-color: #1c1c1c; /* Darker black background */
+    font-family: 'Arial', sans-serif;
+    color: #d7bde2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+/* Heading (H1) Styling */
+h1 {
+    color: #e8daef;
+    font-size: 4rem;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7); /* Enhanced shadow */
+    margin-bottom: 40px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Textarea Styling */
+textarea {
+    background-color: #2a2a2a;
+    color: #e5e5e5;
+    border: 2px solid #8e44ad; /* Purple border */
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 1.2rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease, transform 0.3s ease;
+}
+
+textarea:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #9b59b6; /* Brighter purple on focus */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(155, 89, 182, 0.5);
+    animation: pulseBorder 1s infinite;
+}
+
+@keyframes pulseBorder {
+    0% {
+        border-color: #9b59b6;
+    }
+    50% {
+        border-color: #6c3483;
+    }
+    100% {
+        border-color: #9b59b6;
+    }
+}
+
+/* Label Styling */
+label {
+    color: #c39bd3;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* Range Slider Styling */
+.custom-range {
+    background-color: #333;
+    border-radius: 15px;
+    height: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.custom-range:hover {
+    background-color: #444;
+}
+
+.custom-range::-webkit-slider-thumb {
+    background-color: #8e44ad;
+    border: none;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-range::-webkit-slider-thumb:hover {
+    background-color: #9b59b6;
+    transform: scale(1.2);
+}
+
+.custom-range::-moz-range-thumb {
+    background-color: #8e44ad;
+    border: none;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-range::-moz-range-thumb:hover {
+    background-color: #9b59b6;
+    transform: scale(1.2);
+}
+
+.custom-range::-ms-thumb {
+    background-color: #8e44ad;
+    border: none;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-range::-ms-thumb:hover {
+    background-color: #9b59b6;
+    transform: scale(1.2);
+}
+
+/* Voice Select Dropdown */
+#voice-select {
+    background-color: #333;
+    color: #e8daef;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+#voice-select:focus {
+    outline: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7), 0 0 12px rgba(155, 89, 182, 0.4);
+    transform: scale(1.02);
+}
+
+/* Button Styling */
+#speak-button {
+    background: linear-gradient(145deg, #6c3483, #8e44ad);
+    color: #ffffff;
+    font-size: 1.5rem;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease-in-out, transform 0.2s ease;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+#speak-button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+#speak-button:focus::after, #speak-button:active::after {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+}
+
+#speak-button:hover {
+    background: linear-gradient(145deg, #8e44ad, #9b59b6);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+    transform: translateY(-5px);
+}
+
+#speak-button:active {
+    transform: scale(0.98);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+#speak-button:focus, #speak-button:disabled {
+    background: linear-gradient(145deg, #6c3483, #8e44ad) !important;
+    color: white !important;
+    outline: none;
+    box-shadow: none;
+}
+
+/* General Input and Form Field Styling */
+input, select, textarea {
+    margin-bottom: 20px;
+}
+
+/* Form Container Styling */
+form {
+    max-width: 500px;
+    margin: auto;
+    background-color: #2c2c2c;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8), 0 0 30px rgba(155, 89, 182, 0.4);
+    border: 2px solid #8e44ad;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+form:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9), 0 0 40px rgba(155, 89, 182, 0.5);
+    transform: scale(1.02);
+}
+
+/* Adjusting Slider Value Display */
+#rate-value, #pitch-value {
+    background-color: #8e44ad;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
